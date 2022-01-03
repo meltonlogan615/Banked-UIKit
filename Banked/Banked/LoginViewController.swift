@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
   
+  let headerView = HeaderView()
   let loginView = LoginView()
   let signInButton = UIButton(type: .system)
   let errorMessageLabel = UILabel()
@@ -30,6 +31,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController {
   private func style() {
+    headerView.translatesAutoresizingMaskIntoConstraints = false
     loginView.translatesAutoresizingMaskIntoConstraints = false
     
     signInButton.translatesAutoresizingMaskIntoConstraints = false
@@ -43,13 +45,21 @@ extension LoginViewController {
     errorMessageLabel.textColor = .systemRed
     errorMessageLabel.numberOfLines = 0
     errorMessageLabel.isHidden = true
-    
   }
   
   private func layout() {
+    view.addSubview(headerView)
     view.addSubview(loginView)
     view.addSubview(signInButton)
     view.addSubview(errorMessageLabel)
+    
+// Header
+    NSLayoutConstraint.activate([
+//      headerView.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: 32),
+      headerView.trailingAnchor.constraint(equalTo: loginView.trailingAnchor),
+      headerView.bottomAnchor.constraint(equalToSystemSpacingBelow: loginView.topAnchor, multiplier: -1),
+      headerView.leadingAnchor.constraint(equalTo: loginView.leadingAnchor),
+    ])
     
 // TextFields
     NSLayoutConstraint.activate([
