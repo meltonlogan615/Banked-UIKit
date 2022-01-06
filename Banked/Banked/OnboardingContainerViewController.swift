@@ -19,9 +19,9 @@ class OnboardingContainerViewController: UIViewController {
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     
-    let page1 = ViewController1()
-    let page2 = ViewController2()
-    let page3 = ViewController3()
+    let page1 = OnboardingViewController(heroImageName: "delorean", titleText: "Banked gets you crunk. Cash Rules Everything Around Me. CREAM! Get the money. Dolla, dolla bills y'all")
+    let page2 = OnboardingViewController(heroImageName: "thumbs", titleText: "poop")
+    let page3 = OnboardingViewController(heroImageName: "world", titleText: "more poop")
     
     pages.append(page1)
     pages.append(page2)
@@ -91,28 +91,6 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
   
   func presentationIndex(for pageViewController: UIPageViewController) -> Int {
     return pages.firstIndex(of: self.currentVC) ?? 0
-  }
-}
-
-// MARK: - ViewControllers
-class ViewController1: UIViewController {
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    view.backgroundColor = .systemRed
-  }
-}
-
-class ViewController2: UIViewController {
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    view.backgroundColor = .systemGreen
-  }
-}
-
-class ViewController3: UIViewController {
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    view.backgroundColor = .systemBlue
   }
 }
 
