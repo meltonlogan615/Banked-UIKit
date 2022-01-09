@@ -69,8 +69,8 @@
 		32D750E6277CD24300D24420 /* Banked */ = {
 			isa = PBXGroup;
 			children = (
-				32C5304727836BB100188E4B /* Onboarding */,
 				32D750E7277CD24300D24420 /* AppDelegate.swift */,
+				32C5304727836BB100188E4B /* Onboarding */,
 				32D750FC277CD79E00D24420 /* Login */,
 				32D750FB277CD71C00D24420 /* Files */,
 			);

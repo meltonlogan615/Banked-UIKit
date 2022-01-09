@@ -53,7 +53,7 @@ extension OnboardingViewController {
     label.font = UIFont.preferredFont(forTextStyle: .title3)
     label.adjustsFontForContentSizeCategory = true
     label.numberOfLines = 0
-    label.text = self.titleText
+    label.text = titleText
   }
   
   func layout() {
